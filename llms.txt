@@ -1,19 +1,19 @@
-# Agents Repo guides
+# Agents Repo docs
 
 Stable markdown URLs for agents and tooling:
 
-https://agents-repo.org/guide/agents-json-lock.md
-https://agents-repo.org/guide/cli-commands.md
-https://agents-repo.org/guide/cli-doctor.md
-https://agents-repo.org/guide/contributing-packages.md
-https://agents-repo.org/guide/contributing-to-webapp.md
-https://agents-repo.org/guide/discover-packages.md
-https://agents-repo.org/guide/ecosystem-overview.md
-https://agents-repo.org/guide/for-ai-agents.md
-https://agents-repo.org/guide/getting-started.md
-https://agents-repo.org/guide/how-the-registry-works.md
-https://agents-repo.org/guide/install-targets.md
-https://agents-repo.org/guide/installing-packages.md
-https://agents-repo.org/guide/submitting-a-package.md
-https://agents-repo.org/guide/using-the-catalog.md
+https://agents-repo.org/docs/agents-json-lock.md
+https://agents-repo.org/docs/cli-commands.md
+https://agents-repo.org/docs/cli-doctor.md
+https://agents-repo.org/docs/contributing-packages.md
+https://agents-repo.org/docs/contributing-to-webapp.md
+https://agents-repo.org/docs/discover-packages.md
+https://agents-repo.org/docs/ecosystem-overview.md
+https://agents-repo.org/docs/for-ai-agents.md
+https://agents-repo.org/docs/getting-started.md
+https://agents-repo.org/docs/how-the-registry-works.md
+https://agents-repo.org/docs/install-targets.md
+https://agents-repo.org/docs/installing-packages.md
+https://agents-repo.org/docs/submitting-a-package.md
+https://agents-repo.org/docs/using-the-catalog.md
 
