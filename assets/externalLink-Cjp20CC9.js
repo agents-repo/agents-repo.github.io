@@ -1,0 +1,1 @@
+function e(e){return`${e} (opens in a new tab)`}export{e as t};
