@@ -1,0 +1,1 @@
+import"./rolldown-runtime-QTnfLwEv.js";import{n as e,v as t}from"./vendor-react-ZZYdSW9n.js";import{t as n}from"./useTranslation-DqEg91zs.js";t();var r=e();function i(e,t){return`${e} ${t}`}function a(){let e=(0,r.c)(4),{t}=n(`shell`),a;e[0]===t?a=e[1]:(a=t(`accessibility.opensInNewTab`),e[0]=t,e[1]=a);let o=a,s;return e[2]===o?s=e[3]:(s=e=>i(e,o),e[2]=o,e[3]=s),s}export{a as t};
