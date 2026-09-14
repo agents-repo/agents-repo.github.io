@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,89 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"feature-exploration-planner — Agents Repo","description":"Explore app feature ideas with ask-first intake, optional landscape research, options analysis, and a structured feature brief. Chat-web for early brainstormin…","url":"https://agents-repo.org/pt-pt/packages/maiconfz/feature-exploration-planner/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/feature-exploration-planner"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>feature-exploration-planner</h1>
+    <p>Explore app feature ideas with ask-first intake, optional landscape research, options analysis, and a structured feature brief. Chat-web for early brainstormin…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/feature-exploration-planner.md">/packages/maiconfz/feature-exploration-planner.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/pt-pt/packages/maiconfz/feature-exploration-planner/">/pt-pt/packages/maiconfz/feature-exploration-planner/</a></p>
+    <h2>Agents</h2>
+<pre>- automatic-landscape-researcher: Assumption-first landscape research: proactive search for patterns and competitors, cite sources, label gaps in assumption-log. One-shot.
+- feature-definition-planner: Synthesize a feature-brief text output from intake, landscape, and options artifacts. Preserves original user intent. One-shot; planning only.
+- feature-exploration-chat: Early brainstorming for app feature ideas from conversation, public URLs, uploads, or pasted sources. Emits idea-brief when evidence exists. Does not produce a full feature-brief or inspect a host tree.
+- feature-intake: Ask-first framing of app feature ideas against the host repository. Emits intake-summary and blocking questions only. Does not research or define the full feature brief.
+- interactive-landscape-researcher: Ask-first landscape research for app features: propose queries, get approval, cite sources. Assumption-log always empty. Invoked once by the flow (not looped); includes one inline query-approval step.
+- options-analyst: Compare feature implementation options, trade-offs, risks, and non-goals against intake and landscape context. One-shot; no Q&amp;A loop.</pre>
+    <h2>Flows</h2>
+<pre>- feature-exploration-planning: Orchestrate ask-first feature intake, routed landscape research, options analysis, and feature-brief synthesis. Planning only; does not implement.</pre>
+    <h2>README excerpt</h2>
+<pre># feature-exploration-planner
+
+Explore app feature ideas with ask-first intake, optional landscape
+research, options analysis, and a structured **feature-brief** text output.
+Chat-web supports early brainstorming. Planning only; does not implement.
+
+This is a `maiconfz` community package, not an official agents-repo product.
+Installed agents reply in the **language the user used** (English if mixed
+or unclear).
+
+## Objective
+
+Turn a fuzzy app feature idea into a structured **feature-brief** you can
+paste into a GitHub issue or feed downstream planning. Sits **upstream** of:
+
+- `maiconfz/github-interactive-issue-implementation-planner` (issue exists)
+- `maiconfz/plan-refiner` (implementation plan exists)
+
+Primary output is **text in the conversation** — no markdown file required.
+Optional `output-path` writes `feature-brief` to a host file when provided.
+
+## Workflow
+
+```mermaid
+flowchart LR
+  chat[feature-exploration-chat]
+  intake[feature-intake]
+  mode[research-mode]
+  interactive[interactive-landscape-researcher]
+  automatic[automatic-landscape-researcher]
+  options[options-analyst]
+  define[feature-definition-planner]
+  chat --&gt;|&quot;idea-brief&quot;| intake
+  intake --&gt; mode
+  mode --&gt; interactive
+  mode --&gt; automatic
+  mode --&gt;|skip| options
+  interactive --&gt; options
+  automatic --&gt; options
+  options --&gt; define
+```
+
+**Q&amp;A policy:** one clarification cycle at intake only (blocking questions).
+All other agents run one-shot.
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets cursor
+npx agents-repo@latest install maiconfz/feature-exploration-planner
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/feature-exploration-planner
+```
+
+- Choose `--targets` for your IDE: `github-copilot`, `cursor`,
+  `claude-code`, or `openai-codex` (pass one or more).
+- After install, commit `agents.json</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

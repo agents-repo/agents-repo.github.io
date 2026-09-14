@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,77 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"context-token-reduction — Agents Repo","description":"Analyze a host project for agent-context token waste in always-on rules, duplicated IDE instructions, docs, skills, and tree shape, then suggest ordered reduct…","url":"https://agents-repo.org/pt-pt/packages/maiconfz/context-token-reduction/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/context-token-reduction"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>context-token-reduction</h1>
+    <p>Analyze a host project for agent-context token waste in always-on rules, duplicated IDE instructions, docs, skills, and tree shape, then suggest ordered reduct…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/context-token-reduction.md">/packages/maiconfz/context-token-reduction.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/pt-pt/packages/maiconfz/context-token-reduction/">/pt-pt/packages/maiconfz/context-token-reduction/</a></p>
+    <h2>Agents</h2>
+<pre>- context-token-chat: Analyze agent-context token waste from public project URLs, uploads, or pasted sources. Emits a footprint report when evidence exists. Does not plan.
+- token-footprint-analyst: Inventory always-on rules, IDE instruction files, docs, skills, and tree shape that inflate agent context; report evidence-backed token-waste findings.
+- token-reduction-advisor: Ask-first drafts of an ordered context-token reduction plan from a footprint report. Plan-only; does not edit files.</pre>
+    <h2>Flows</h2>
+<pre>- reduce-context-tokens: Inventory host-tree context-token waste, ask consent, then draft an ordered reduction plan. Planning only; does not implement.</pre>
+    <h2>README excerpt</h2>
+<pre># context-token-reduction
+
+Analyze a host project for agent-context token waste in always-on rules,
+duplicated IDE instructions, docs, skills, and tree shape, then suggest
+ordered reductions. Chat-web can analyze public URLs and uploads.
+Planning only; does not implement.
+
+This is a `maiconfz` community package, not an official agents-repo product.
+Installed agents reply in the **language the user used** (English if mixed
+or unclear).
+
+This package is **not** `maiconfz/ai-first-project-readiness`. Readiness
+asks whether an agent can work in the repo. This package asks what in the
+repo is burning context tokens and how to shrink, split, or defer it.
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets github-copilot claude-code cursor openai-codex
+npx agents-repo@latest install maiconfz/context-token-reduction
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/context-token-reduction
+```
+
+Commit `agents.json`, `agents-lock.json`, and extracted paths after
+install. All four supported IDE targets receive the package content
+(rendered per target).
+
+## Usage
+
+Two entry paths:
+
+- **Workspace (IDE):** run `reduce-context-tokens` in the **host
+  project**. It inventories likely context load, shows a footprint
+  report, **asks before planning**, then drafts an ordered reduction
+  plan. It does not create files.
+- **Chat-web:** use `context-token-chat`. It interviews from what you
+  say, or analyzes **public git-forge/project URLs** (not marketing
+  pages), **uploads**, and **pasted sources** into a structured
+  footprint report. It does not plan. For a full tree walk and
+  ask-first planning, install this package in an IDE and run the flow
+  there.
+
+Standalone workspace agents:
+
+- `token-footprint-analyst` — inspect the host tree; write a footprint
+  report. Does not plan.
+- `token-reduc</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

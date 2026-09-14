@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,79 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"github-pr-review-triage — Agents Repo","description":"GitHub-specific agent: triages PR review threads and Copilot review summaries via gh CLI — fetch, fix, commit, push, reply, resolve or acknowledge automaticall…","url":"https://agents-repo.org/pt-br/packages/maiconfz/github-pr-review-triage/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/github-pr-review-triage"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>github-pr-review-triage</h1>
+    <p>GitHub-specific agent: triages PR review threads and Copilot review summaries via gh CLI — fetch, fix, commit, push, reply, resolve or acknowledge automaticall…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/github-pr-review-triage.md">/packages/maiconfz/github-pr-review-triage.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/pt-br/packages/maiconfz/github-pr-review-triage/">/pt-br/packages/maiconfz/github-pr-review-triage/</a></p>
+    <h2>Agents</h2>
+<pre>- github-pr-review-triage: GitHub PR review triage via gh: fetch unresolved threads and Copilot review summaries, fix, commit, reply, and resolve or acknowledge. Use for Copilot or Bugbot inline feedback.</pre>
+    <h2>README excerpt</h2>
+<pre># github-pr-review-triage
+
+GitHub-specific agent: triages PR review threads and Copilot review summaries
+via `gh` — fetch, fix, commit, push, reply, resolve or acknowledge.
+
+## Objective
+
+Triages pull request review feedback on any GitHub repository. Uses the GitHub
+CLI (`gh`) to fetch unresolved review threads and Copilot review summaries
+(zero inline comments), classify outcomes, apply fixes, validate, then
+**automatically** commit, push, reply, resolve threads, and acknowledge
+summaries when `gh` is authenticated (default). Pass `dry-run: true` for
+review-only mode without shipping.
+
+## Workflow
+
+```mermaid
+flowchart LR
+  preflight[Preflight_gh_auth]
+  fetch[Fetch_feedback]
+  triage[Triage_outcomes]
+  fix[Apply_fixes]
+  ship[Validate_and_push]
+  close[Reply_and_close]
+
+  preflight --&gt; fetch --&gt; triage --&gt; fix --&gt; ship --&gt; close
+```
+
+## Prerequisites
+
+- [GitHub CLI](https://cli.github.com/) authenticated for the target repository
+  (`gh auth status`)
+- Local checkout on the PR head branch
+- Node.js with `npx` (see the [agents-repo CLI](https://github.com/agents-repo/cli))
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets cursor
+npx agents-repo@latest install maiconfz/github-pr-review-triage
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/github-pr-review-triage
+```
+
+- Choose `--targets` for your IDE: `github-copilot`, `cursor`, `claude-code`,
+  or `openai-codex` (pass one or more).
+- After install, commit `agents.json`, `agents-lock.json`, and the extracted
+  install paths when they change.
+- Extract paths follow the install target (see
+  [install-targets](https://github.com/agents-repo/registry/blob/main/specs/install-targets.md));
+  invoke the agent by name below.
+
+This README is catalog documentation on `main`; installed content comes from
+the versioned deployment ZIP</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

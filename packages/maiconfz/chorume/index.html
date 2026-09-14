@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,75 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"chorume — Agents Repo","description":"Satirical chorume toolkit: roast messy projects, implement more sludge, rubber-stamp if it still runs. Original parody of Brazilian tech slang. Not affiliated…","url":"https://agents-repo.org/packages/maiconfz/chorume/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/chorume"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>chorume</h1>
+    <p>Satirical chorume toolkit: roast messy projects, implement more sludge, rubber-stamp if it still runs. Original parody of Brazilian tech slang. Not affiliated…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/chorume.md">/packages/maiconfz/chorume.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/packages/maiconfz/chorume/">/packages/maiconfz/chorume/</a></p>
+    <h2>Agents</h2>
+<pre>- chorume-ai: Vibe-coding chorume persona: prompt first, blame the model. Same messy outcome as chorume-coder, different theater. Matches the user's language. Refuses force-push, secrets, and data destruction.
+- chorume-chat: Conversational chorume persona for roasting messy projects and pep talks. Talk-only unless the user insists. Original parody; does not impersonate anyone. Matches the user's language.
+- chorume-coder: Implements more chorume: copy-paste, TODOs, later-for-cleanup. Still must compile or run. Matches the user's language. Refuses force-push, secrets, and data destruction.
+- chorume-project-analyzer: Reads the tree and grades the sludge. Lists mess that can wait. Does not implement. Matches the user's language. Refuses force-push, secrets, and data destruction.
+- chorume-reviewer: Rubber-stamp review if it still runs. Skips test demands. Still blocks secrets, force-push, and data destruction. Matches the user's language.</pre>
+    <h2>Flows</h2>
+<pre>- chorume-ship-it: Chains chorume-project-analyzer, chorume-coder, then chorume-reviewer to ship more chorume. Does not invoke chorume-chat or chorume-ai.</pre>
+    <h2>README excerpt</h2>
+<pre># chorume
+
+Satirical chorume toolkit: roast messy projects, implement more sludge, and
+rubber-stamp if it still runs. Original parody of Brazilian tech slang. Not
+a real methodology and **not affiliated** with any influencer.
+
+Catalog copy is English. Installed agents reply, comment, and summarize in the
+**language the user used** (English if mixed or unclear).
+
+This is a `maiconfz` community package, not an official agents-repo product.
+
+## Disclaimer
+
+Definitions in this package are original parody of the Brazilian tech slang
+*chorume* (a sludge-project roast). They are inspired by public commentary
+associated with Mano Deyvin. This package is **not affiliated** with him or
+any other influencer and **does not impersonate** anyone. It is not a
+transcript or catchphrase pack.
+
+Do not treat the instructions as permission to force-push protected branches,
+leak secrets, destroy data, disable security, rewrite git history, or turn
+off CI and git hooks. Host-agent safety rules still win.
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets github-copilot claude-code cursor openai-codex
+npx agents-repo@latest install maiconfz/chorume
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/chorume
+```
+
+Commit `agents.json`, `agents-lock.json`, and extracted paths after install.
+All four supported IDE targets receive the package content (rendered per
+target). Installed content comes from the versioned ZIPs pinned in your
+`agents-lock.json`.
+
+## Usage
+
+- `chorume-chat` — talk only: roast the mess and give pep talks.
+- `chorume-project-analyzer` — read the tree; grade the sludge; list what can wait.
+- `chorume-coder` — implement more sludge; leave TODOs; still make it run.
+- `chorume-ai` — same messy implementation, vibe/prompt theater, blame the model.
+- `chorume-reviewer` — local rubber-stam</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

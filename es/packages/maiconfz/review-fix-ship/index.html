@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,91 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"review-fix-ship — Agents Repo","description":"Local diff review then ship: code, bug, and security reviews (Cursor Bugbot and Security Review subagents when available; portable fallbacks otherwise), then t…","url":"https://agents-repo.org/es/packages/maiconfz/review-fix-ship/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/review-fix-ship"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>review-fix-ship</h1>
+    <p>Local diff review then ship: code, bug, and security reviews (Cursor Bugbot and Security Review subagents when available; portable fallbacks otherwise), then t…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/review-fix-ship.md">/packages/maiconfz/review-fix-ship.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/es/packages/maiconfz/review-fix-ship/">/es/packages/maiconfz/review-fix-ship/</a></p>
+    <h2>Agents</h2>
+<pre>- bug-reviewer: Bug-focused review of the scoped git diff. On Cursor launches the Bugbot subagent; otherwise an equivalent in-package pass. Does not edit files.
+- code-reviewer: General-quality review of the scoped git diff: design, maintainability, missing tests. Does not edit files. Does not replace bug or security specialists.
+- findings-fixer: Triages merged review findings, applies minimal fixes, runs project checks, then commits and pushes the feature branch unless dry-run is true.
+- security-reviewer: Security review of the scoped git diff. On Cursor launches the Security Review subagent; otherwise an equivalent in-package pass. No exploits or PoCs. Does not edit files.</pre>
+    <h2>Flows</h2>
+<pre>- review-fix-ship: Runs code, bug, and security reviews (Cursor skills when available), merges findings, then fixes, commits, and pushes. Complements GitHub PR thread triage.</pre>
+    <h2>README excerpt</h2>
+<pre># review-fix-ship
+
+Local diff review then ship: run code, bug, and security reviews (Cursor
+Bugbot and Security Review subagents when available; portable fallbacks
+otherwise), then triage, fix, commit, and push findings.
+
+This is a `maiconfz` community package, not an official agents-repo
+product. It complements `maiconfz/github-pr-review-triage` (GitHub PR
+comment threads). This package reviews the **local git diff**, then
+ships code on the current feature branch.
+
+## Objective
+
+Drop-in replacement for the chat habit `/code-review`, `/review-bugbot`,
+`/review-security`, then “fix, commit and push findings.”
+
+On Cursor, `bug-reviewer` and `security-reviewer` launch the official
+Task subagents when the host can. On other IDEs they run equivalent
+in-package reviews. `code-reviewer` always runs in-package (`/code-review`
+is not a Task subagent). Only `findings-fixer` edits, commits, and
+pushes.
+
+Invoking the **`review-fix-ship`** flow grants ship-mode on the current
+**feature branch** by default. Pass `dry-run: true` to skip commit and
+push. The flow stops if the checkout is the default branch.
+
+Hosts without Cursor Task types still get the three reviews; those
+fallback passes are weaker than Bugbot and the Security Review
+subagent. The README and agents say so.
+
+## Workflow
+
+```mermaid
+flowchart TD
+  flow[review-fix-ship]
+  detect[Preflight]
+  code[code-reviewer]
+  bug[bug-reviewer]
+  sec[security-reviewer]
+  merge[Merge findings]
+  fixer[findings-fixer]
+  ship[Validate commit push]
+
+  flow --&gt; detect
+  detect --&gt; code
+  detect --&gt; bug
+  detect --&gt; sec
+  code --&gt; merge
+  bug --&gt; merge
+  sec --&gt; merge
+  merge --&gt; fixer
+  fixer --&gt; ship
+```
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets cursor
+npx agents-repo@latest install maiconfz/review-fix-ship
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@l</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

@@ -59,3 +59,21 @@ https://agents-repo.org/pt-pt/docs/using-the-catalog.md
 https://agents-repo.org/docs/submitting-a-package.md
 https://agents-repo.org/docs/using-the-catalog.md
 
+## Package markdown fallbacks
+
+https://agents-repo.org/packages/agents-repo/agents-repo-package-creation.md
+https://agents-repo.org/packages/agents-repo/hello-agent.md
+https://agents-repo.org/packages/maiconfz/ai-first-project-readiness.md
+https://agents-repo.org/packages/maiconfz/chorume.md
+https://agents-repo.org/packages/maiconfz/context-token-reduction.md
+https://agents-repo.org/packages/maiconfz/dev-emocionado.md
+https://agents-repo.org/packages/maiconfz/feature-exploration-planner.md
+https://agents-repo.org/packages/maiconfz/github-interactive-issue-implementation-planner.md
+https://agents-repo.org/packages/maiconfz/github-pr-review-triage.md
+https://agents-repo.org/packages/maiconfz/plan-refiner.md
+https://agents-repo.org/packages/maiconfz/refactor-or-trash.md
+https://agents-repo.org/packages/maiconfz/review-fix-ship.md
+https://agents-repo.org/packages/maiconfz/roast-my-project.md
+https://agents-repo.org/packages/maiconfz/saas-audit.md
+https://agents-repo.org/packages/maiconfz/xgh.md
+

@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,77 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"hello-agent — Agents Repo","description":"Hello Agent package scaffolded by package-create","url":"https://agents-repo.org/pt-br/packages/agents-repo/hello-agent/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/agents-repo/hello-agent"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>hello-agent</h1>
+    <p>Hello Agent package scaffolded by package-create</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/agents-repo/hello-agent.md">/packages/agents-repo/hello-agent.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/pt-br/packages/agents-repo/hello-agent/">/pt-br/packages/agents-repo/hello-agent/</a></p>
+    <h2>Agents</h2>
+<pre>- hello-again: Provides a follow-up hello response for chained greetings
+- hello-agent: Responds with a simple hello workflow</pre>
+    <h2>Flows</h2>
+<pre>- hello-agents: Invokes hello-agent and hello-again in sequence</pre>
+    <h2>README excerpt</h2>
+<pre># hello-agent
+
+Hello Agent package scaffolded by package-create.
+
+## Quickstart
+
+This package demonstrates a minimal multi-agent setup in the registry.
+
+## Package Contents
+
+- Agents:
+  - `hello-agent`
+  - `hello-again`
+- Flows:
+  - `hello-agents` (declares `agents[]` for Level-2 chat-web starter prompts)
+
+## Chat-web consumption
+
+This package opts into the chat-web channel via
+`compatibility.consumption` with `{ &quot;id&quot;: &quot;chat-web&quot;, &quot;status&quot;: &quot;supported&quot; }`.
+All agents and flows are included in the public chat catalog (no
+`chatWeb: excluded` overrides).
+
+After `package:build`, the instruction manifest for a released version lives at:
+
+```text
+packages/agents-repo/hello-agent/versions/&lt;version&gt;/instructions.json
+```
+
+Registry artifacts use **path-only** `/pkg/...` strings. WebApp consumers
+join the registry-proxy origin with those paths per
+[`specs/chat-consumption.md`](../../../specs/chat-consumption.md):
+
+- **Origin:** `https://registry-proxy.maiconfz.workers.dev`
+
+Illustrative absolute fetch URLs for version `1.0.1`:
+
+```text
+https://registry-proxy.maiconfz.workers.dev/pkg/agents-repo/hello-agent/1.0.1/instructions.json
+https://registry-proxy.maiconfz.workers.dev/pkg/agents-repo/hello-agent/1.0.1/agents/hello-agent.agent.md
+https://registry-proxy.maiconfz.workers.dev/pkg/agents-repo/hello-agent/1.0.1/flows/hello-agents.agent.md
+```
+
+The `hello-agents` flow lists step agents in frontmatter/metadata `agents[]`;
+`package:build` maps that ordered list to `agentInstructions` in
+`instructions.json`.
+
+## Validate and Build
+
+Run from repository root:
+
+```bash
+npm run package:validate -- --package agents-repo/hello-agent
+npm run package:build -- --package agents-repo/hello-agent
+npm run package:validate-artifacts -- \
+  --package agents-repo/hello-agent --version 1.0.1
+```</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

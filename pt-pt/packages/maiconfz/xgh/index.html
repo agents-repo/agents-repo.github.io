@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,80 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"xgh — Agents Repo","description":"Satirical XGH toolkit: first-idea coding, rubber-stamp review, and ship-it pep talks. Original parody of Brazilian developer folklore. Not affiliated with any…","url":"https://agents-repo.org/pt-pt/packages/maiconfz/xgh/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/xgh"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>xgh</h1>
+    <p>Satirical XGH toolkit: first-idea coding, rubber-stamp review, and ship-it pep talks. Original parody of Brazilian developer folklore. Not affiliated with any…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/xgh.md">/packages/maiconfz/xgh.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/pt-pt/packages/maiconfz/xgh/">/pt-pt/packages/maiconfz/xgh/</a></p>
+    <h2>Agents</h2>
+<pre>- xgh-ai: Vibe-coding XGH persona: prompt first, blame the model, treat short memory as a feature. Original parody, not affiliated with XGH-AI sites. Matches the user's language. Refuses force-push, secrets, and data destruction.
+- xgh-chat: Conversational XGH persona for excuses and ship-it pep talks. Does not edit the working tree unless the user insists. Original parody; does not quote third-party axiom lists. Matches the user's language.
+- xgh-coder: Implements the first idea that compiles. Skips tests, leaves TODOs, and does not clean working mess. Matches the user's language. Refuses force-push, secrets, and data destruction.
+- xgh-project-analyzer: Reactive project read: unnoticed issues are not issues. Prefers shipping over architecture. Matches the user's language. Refuses force-push, secrets, and data destruction.
+- xgh-reviewer: Rubber-stamp review if it seems to run. Skips test demands and assigns creative blame. Still blocks secrets, force-push, and data destruction. Matches the user's language.</pre>
+    <h2>Flows</h2>
+<pre>- xgh-ship-it: Chains xgh-project-analyzer, xgh-coder, then xgh-reviewer to ship the first compiling idea. Does not invoke xgh-chat or xgh-ai.</pre>
+    <h2>README excerpt</h2>
+<pre># xgh
+
+Satirical XGH toolkit: first-idea coding, rubber-stamp review, and ship-it pep
+talks. Original parody of Brazilian developer folklore. Not a real methodology
+and **not affiliated** with any XGH brand or site.
+
+Catalog copy is English. Installed agents reply, comment, and summarize in the
+**language the user used** (English if mixed or unclear).
+
+This is a `maiconfz` community package, not an official agents-repo product.
+
+## Disclaimer
+
+Definitions in this package are original parody. They do not copy third-party
+axiom lists or manifests. Do not treat the instructions as permission to
+force-push protected branches, leak secrets, destroy data, disable security,
+rewrite git history, or turn off CI and git hooks. Host-agent safety rules
+still win.
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets github-copilot claude-code cursor openai-codex
+npx agents-repo@latest install maiconfz/xgh
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/xgh
+```
+
+Commit `agents.json`, `agents-lock.json`, and extracted paths after install.
+All four supported IDE targets receive the package content (rendered per
+target). Installed content comes from the versioned ZIPs pinned in your
+`agents-lock.json`.
+
+## Usage
+
+- `xgh-chat` — talk only: excuses and ship-it pep talks.
+- `xgh-project-analyzer` — reactive read; unnoticed issues are not issues.
+- `xgh-coder` — implement the first compiling idea; skip tests; leave TODOs.
+- `xgh-ai` — same messy implementation, vibe/prompt theater, blame the model.
+- `xgh-reviewer` — local rubber-stamp if it seems to run (not `gh` triage).
+- `xgh-ship-it` — analyzer → coder → reviewer. Does not call chat or xgh-ai.
+
+## Package contents
+
+| Asset | Role |
+| --- | --- |
+| `xgh-chat` | Conversational persona |
+| `xgh-project-analyzer` | Ship-first analysis |
+| `xgh-c</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

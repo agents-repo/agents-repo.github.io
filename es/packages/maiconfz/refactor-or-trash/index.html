@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,77 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"refactor-or-trash — Agents Repo","description":"Funny-but-grounded call: refactor, strangler, or trash a codebase. Audits debt, scores salvage vs wrap vs rewrite, then delivers the verdict. Workspace flow fo…","url":"https://agents-repo.org/es/packages/maiconfz/refactor-or-trash/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/refactor-or-trash"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>refactor-or-trash</h1>
+    <p>Funny-but-grounded call: refactor, strangler, or trash a codebase. Audits debt, scores salvage vs wrap vs rewrite, then delivers the verdict. Workspace flow fo…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/refactor-or-trash.md">/packages/maiconfz/refactor-or-trash.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/es/packages/maiconfz/refactor-or-trash/">/es/packages/maiconfz/refactor-or-trash/</a></p>
+    <h2>Agents</h2>
+<pre>- cost-appraiser: Score refactor-and-upgrade, strangler, and greenfield cost from an audit. Dry numbers only; no comedy and no verdict. Does not implement. Matches the user's language.
+- project-auditor: Survey the host tree for stack age, tests, coupling, docs, CI, upgrades, and infra. Evidence only; no scores or verdict. Does not implement. Matches the user's language.
+- refactor-or-trash-chat: Chat-web audit, dry costs, and Refactor / Strangler / Trash verdict from public git-forge URLs, uploads, or paste. No host-tree walk. Does not delete or rewrite. Matches the user's language.
+- trash-judge: Take dry cost scores and deliver a Refactor, Strangler, or Trash verdict with comedy. Grounded in evidence. Does not delete or rewrite. Matches the user's language.</pre>
+    <h2>Flows</h2>
+<pre>- refactor-or-trash: Run project-auditor, cost-appraiser, then trash-judge for a host-tree Refactor, Strangler, or Trash verdict. Advisory only; does not implement, delete, or start a rewrite.</pre>
+    <h2>README excerpt</h2>
+<pre># refactor-or-trash
+
+Funny-but-grounded call: refactor, strangler, or trash a codebase.
+Audits debt, scores salvage vs wrap vs rewrite, then delivers the
+verdict. Workspace flow for host trees; chat-web for public repos.
+Does not delete or rewrite. Replies match the user's language.
+
+This is a `maiconfz` community package, not an official agents-repo
+product. Catalog copy is English. Installed agents reply in the
+**language the user used** (English if mixed or unclear). Verdict
+stamps stay **Refactor**, **Strangler**, and **Trash!** in every
+language. **Strangler** is Fowler's strangler fig: keep a working
+core, replace the rest in slices.
+
+This package **decides**. It is not `maiconfz/roast-my-project`
+(comedy critique), `maiconfz/chorume` (more sludge), or `maiconfz/xgh`
+(ship the first idea).
+
+## Disclaimer
+
+Definitions in this package are original parody of demolition-inspector
+tropes. **Trash!** is an advisory stamp, not a command to delete the
+repo. Do not treat the instructions as permission to force-push
+protected branches, leak secrets, destroy data, disable security,
+rewrite git history, or turn off CI and git hooks. Host-agent safety
+rules still win.
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets github-copilot claude-code cursor openai-codex
+npx agents-repo@latest install maiconfz/refactor-or-trash
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/refactor-or-trash
+```
+
+Commit `agents.json`, `agents-lock.json`, and extracted paths after
+install. All four supported IDE targets receive the package content
+(rendered per target). Installed content comes from the versioned ZIPs
+pinned in your `agents-lock.json`.
+
+## Usage
+
+Two entry paths:
+
+- **Workspace (IDE):** run `refactor-or-trash` in the **host project**.
+  It audits the tree, scores three paths, then stamps </pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

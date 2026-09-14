@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,83 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"plan-refiner — Agents Repo","description":"Refine an existing feature or implementation plan against the current repository: find gaps and inconsistencies. Interactive ask-first or automatic assumption-…","url":"https://agents-repo.org/es/packages/maiconfz/plan-refiner/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/plan-refiner"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>plan-refiner</h1>
+    <p>Refine an existing feature or implementation plan against the current repository: find gaps and inconsistencies. Interactive ask-first or automatic assumption-…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/plan-refiner.md">/packages/maiconfz/plan-refiner.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/es/packages/maiconfz/plan-refiner/">/es/packages/maiconfz/plan-refiner/</a></p>
+    <h2>Agents</h2>
+<pre>- automatic-plan-refiner: Assumption-first quality pass on an existing plan: full repo check, fills gaps with documented assumptions. One-shot refined plan. Does not implement.
+- interactive-plan-refiner: Ask-first quality pass on an existing plan: full repo check for gaps and inconsistencies. Prefers questions over assumptions. Does not implement.</pre>
+    <h2>Flows</h2>
+<pre>- plan-refinement: Route an existing plan to interactive (ask-first) or automatic (assumption-first) refinement with a full repository pass. Planning only.</pre>
+    <h2>README excerpt</h2>
+<pre># plan-refiner
+
+Refine an existing feature or implementation plan against the current
+repository: find gaps and inconsistencies. Interactive ask-first or
+automatic assumption-first. Planning only; does not implement.
+
+This is a `maiconfz` community package, not an official agents-repo
+product. Installed agents reply in the **language the user used**
+(English if mixed or unclear).
+
+## Objective
+
+Quality-pass an **already written** plan against the **host** repository.
+Choose ask-first questions or a one-shot revision with labeled
+assumptions. Bounded rediscovery (project rules, cited files, related
+modules and tests). Not a first-pass planner.
+
+If you have a GitHub issue number and no plan yet, use
+`maiconfz/github-interactive-issue-implementation-planner` instead. This
+package does not call `gh` and does not invoke that package.
+
+## Workflow
+
+```mermaid
+flowchart LR
+  draft[draft-plan]
+  mode[refine-mode]
+  interactive[interactive-plan-refiner]
+  automatic[automatic-plan-refiner]
+  draft --&gt; mode
+  mode --&gt; interactive
+  mode --&gt; automatic
+```
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets cursor
+npx agents-repo@latest install maiconfz/plan-refiner
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/plan-refiner
+```
+
+- Choose `--targets` for your IDE: `github-copilot`, `cursor`,
+  `claude-code`, or `openai-codex` (pass one or more).
+- After install, commit `agents.json`, `agents-lock.json`, and the
+  extracted install paths when they change.
+- Extract paths follow the install target (see
+  [install-targets](https://github.com/agents-repo/registry/blob/main/specs/install-targets.md));
+  invoke the flow or agents by name below.
+
+This README is catalog documentation on `main`; installed content comes
+from the versioned deployment ZIPs pinned in your `agents-lock.json`.
+
+## Usa</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

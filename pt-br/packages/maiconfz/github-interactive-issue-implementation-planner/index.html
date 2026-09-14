@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,83 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"github-interactive-issue-implementation-planner — Agents Repo","description":"Interactive GitHub issue planning: load issue via gh, draft and refine an implementation plan with ask-first clarifications.","url":"https://agents-repo.org/pt-br/packages/maiconfz/github-interactive-issue-implementation-planner/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/github-interactive-issue-implementation-planner"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>github-interactive-issue-implementation-planner</h1>
+    <p>Interactive GitHub issue planning: load issue via gh, draft and refine an implementation plan with ask-first clarifications.</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/github-interactive-issue-implementation-planner.md">/packages/maiconfz/github-interactive-issue-implementation-planner.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/pt-br/packages/maiconfz/github-interactive-issue-implementation-planner/">/pt-br/packages/maiconfz/github-interactive-issue-implementation-planner/</a></p>
+    <h2>Agents</h2>
+<pre>- github-issue-intake: Resolve a GitHub issue number or URL, fetch issue and comment context via gh, and emit a canonical issue brief. Use when starting issue-driven implementation planning. Ask when the repository or issue reference is ambiguous.
+- implementation-plan-refiner: Refine an implementation plan against the issue brief for gaps and inconsistencies. Use after the first plan draft. Prefer questions over assumptions. Does not re-intake the issue or implement code.
+- issue-implementation-planner: Draft an ask-first implementation plan from an issue brief and local repository context. Use after issue intake. Prefer clarifying questions over assumptions. Does not implement code or re-fetch the issue via gh.</pre>
+    <h2>Flows</h2>
+<pre>- issue-implementation-planning: Orchestrates GitHub issue intake, ask-first implementation planning, and plan refinement. Use with an issue number or URL. Planning only unless the user explicitly requests implementation.</pre>
+    <h2>README excerpt</h2>
+<pre># github-interactive-issue-implementation-planner
+
+Interactive GitHub issue planning: load issue via `gh`, draft and refine an
+implementation plan with ask-first clarifications.
+
+## Objective
+
+Interactive GitHub issue workflow: load issue context with `gh`, draft an
+ask-first implementation plan, then refine it for gaps and inconsistencies.
+**Planning only** — no code changes unless you explicitly request implementation
+after the plan is ready.
+
+## Workflow
+
+```mermaid
+flowchart LR
+  intake[github-issue-intake]
+  plan[issue-implementation-planner]
+  refine[implementation-plan-refiner]
+  intake --&gt; plan --&gt; refine
+```
+
+## Prerequisites
+
+- [GitHub CLI](https://cli.github.com/) authenticated for the target repository
+  (`gh auth status`)
+- Local checkout of the repository where you intend to implement the issue
+- Node.js with `npx` (see the [agents-repo CLI](https://github.com/agents-repo/cli))
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets cursor
+npx agents-repo@latest install maiconfz/github-interactive-issue-implementation-planner
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/github-interactive-issue-implementation-planner
+```
+
+- Choose `--targets` for your IDE: `github-copilot`, `cursor`, `claude-code`,
+  or `openai-codex` (pass one or more).
+- After install, commit `agents.json`, `agents-lock.json`, and the extracted
+  install paths when they change.
+- Extract paths follow the install target (see
+  [install-targets](https://github.com/agents-repo/registry/blob/main/specs/install-targets.md));
+  invoke the flow or agents by name below.
+
+This README is catalog documentation on `main`; installed content comes from
+the versioned deployment ZIPs pinned in your `agents-lock.json`.
+
+## Usage
+
+Invoke the **`issue-implementation-planning`** flow when you need to:
+
+- Turn a G</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>

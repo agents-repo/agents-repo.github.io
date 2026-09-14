@@ -29,7 +29,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-Ff2J_DJy.js"></script>
+    <script type="module" crossorigin src="/assets/index-CJEva3_J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-QTnfLwEv.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-ZZYdSW9n.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-ui-1VWwHwIc.js">
@@ -75,6 +75,77 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"ai-first-project-readiness — Agents Repo","description":"Analyze a project's AI-first readiness (architecture, docs, agents, skills, tooling) and, after user consent, draft a phased or full-shot improvement plan. Cha…","url":"https://agents-repo.org/es/packages/maiconfz/ai-first-project-readiness/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/ai-first-project-readiness"}</script>
   </head>
   <body>
+    <noscript id="static-route-fallback">
+  <main>
+    <h1>ai-first-project-readiness</h1>
+    <p>Analyze a project's AI-first readiness (architecture, docs, agents, skills, tooling) and, after user consent, draft a phased or full-shot improvement plan. Cha…</p>
+    <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/ai-first-project-readiness.md">/packages/maiconfz/ai-first-project-readiness.md</a></p>
+    <p>Interactive catalog page: <a href="https://agents-repo.org/es/packages/maiconfz/ai-first-project-readiness/">/es/packages/maiconfz/ai-first-project-readiness/</a></p>
+    <h2>Agents</h2>
+<pre>- ai-first-chat: Analyze AI-first readiness from public project URLs, uploads, or conversation. Emits a structured report when evidence exists. Does not plan.
+- ai-readiness-analyst: Analyze architecture, docs, agents, skills, and tooling; report what helps or blocks AI-first work.
+- improvement-planner: Ask-first, plan-only drafts of phased or full-shot AI-readiness improvements. Does not implement.</pre>
+    <h2>Flows</h2>
+<pre>- ai-first-project-planning: Analyze readiness, ask consent, then draft a phased or full-shot improvement plan.</pre>
+    <h2>README excerpt</h2>
+<pre># ai-first-project-readiness
+
+Analyze a project's AI-first readiness (architecture, docs, agents, skills,
+tooling) and, after user consent, draft a phased or full-shot improvement
+plan. Chat-web can analyze public URLs and uploads. Planning only; does not
+implement.
+
+This is a `maiconfz` community package, not an official agents-repo product.
+Installed agents reply in the **language the user used** (English if mixed
+or unclear).
+
+## Install
+
+Prefer the official [agents-repo CLI](https://github.com/agents-repo/cli).
+
+Greenfield (no usable `agents.json` targets yet):
+
+```bash
+npx agents-repo@latest init --targets github-copilot claude-code cursor openai-codex
+npx agents-repo@latest install maiconfz/ai-first-project-readiness
+```
+
+Already configured (targets present in `agents.json`):
+
+```bash
+npx agents-repo@latest install maiconfz/ai-first-project-readiness
+```
+
+Commit `agents.json`, `agents-lock.json`, and extracted paths after install.
+All four supported IDE targets receive the package content (rendered per
+target).
+
+## Usage
+
+Two entry paths:
+
+- **Workspace (IDE):** run `ai-first-project-planning` in the **host
+  project**. It analyzes the tree, shows a readiness report, **asks
+  before planning**, then drafts a phased or full-shot plan. It does not
+  create files.
+- **Chat-web:** use `ai-first-chat`. It interviews from what you say, or
+  analyzes **public git-forge/project URLs** (not marketing pages),
+  **uploads**, and **pasted sources** into a structured readiness
+  report. It does not plan. For a full tree walk and ask-first planning,
+  install this package in an IDE and run the flow there.
+
+Standalone workspace agents:
+
+- `ai-readiness-analyst` — inspect the host tree; write a readiness
+  report. Does not plan.
+- `improvement-planner` — plan only after `planning-consent` is true.
+  Requires a `readiness-report` and `plan-mode` (`phased` or
+  `full-shot`).
+
+`ai-first-chat` is not part of the flow. Informal chat outlines without
+evidence are **conversation-onl</pre>
+  </main>
+</noscript>
     <div id="root"></div>
   </body>
 </html>
