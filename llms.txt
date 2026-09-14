@@ -65,6 +65,8 @@ https://agents-repo.org/packages/agents-repo/agents-repo-package-creation.md
 https://agents-repo.org/packages/agents-repo/hello-agent.md
 https://agents-repo.org/packages/maiconfz/ai-first-project-readiness.md
 https://agents-repo.org/packages/maiconfz/chorume.md
+https://agents-repo.org/packages/maiconfz/consulting-employer-check.md
+https://agents-repo.org/packages/maiconfz/consulting-reputation-audit.md
 https://agents-repo.org/packages/maiconfz/context-token-reduction.md
 https://agents-repo.org/packages/maiconfz/dev-emocionado.md
 https://agents-repo.org/packages/maiconfz/feature-exploration-planner.md
