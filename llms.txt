@@ -77,5 +77,6 @@ https://agents-repo.org/packages/maiconfz/refactor-or-trash.md
 https://agents-repo.org/packages/maiconfz/review-fix-ship.md
 https://agents-repo.org/packages/maiconfz/roast-my-project.md
 https://agents-repo.org/packages/maiconfz/saas-audit.md
+https://agents-repo.org/packages/maiconfz/skill-security-audit.md
 https://agents-repo.org/packages/maiconfz/xgh.md
 

@@ -1,31 +1,36 @@
 # github-pr-review-triage
 
-GitHub-specific agent: triages PR review threads and Copilot review summaries via gh CLI — fetch, fix, commit, push, reply, resolve or acknowledge automatically when gh is authenticated
+GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, and orphan inline comments via gh CLI — fetch, fix, commit, push, reply, resolve or acknowledge automatically when gh is authenticated
 
 - Package: `maiconfz/github-pr-review-triage`
-- Version: `1.2.1`
+- Version: `1.3.0`
 - HTML page: https://agents-repo.org/packages/maiconfz/github-pr-review-triage/
 - Markdown: https://agents-repo.org/packages/maiconfz/github-pr-review-triage.md
 
 ## Agents
 
-- **github-pr-review-triage**: GitHub PR review triage via gh: fetch unresolved threads and Copilot review summaries, fix, commit, reply, and resolve or acknowledge. Use for Copilot or Bugbot inline feedback.
+- **github-pr-review-triage**: GitHub PR review triage via gh: fetch unresolved threads, Copilot summaries, bot conversation comments, and orphan inline comments; fix, commit, reply, and resolve or acknowledge. Use for Copilot or Bugbot PR feedback.
 
 ## README
 
 # github-pr-review-triage
 
-GitHub-specific agent: triages PR review threads and Copilot review summaries
-via `gh` — fetch, fix, commit, push, reply, resolve or acknowledge.
+GitHub-specific agent: triages PR review threads, Copilot summaries, bot
+conversation comments, and orphan inline comments via `gh` — fetch, fix,
+commit, push, reply, resolve or acknowledge.
 
 ## Objective
 
 Triages pull request review feedback on any GitHub repository. Uses the GitHub
-CLI (`gh`) to fetch unresolved review threads and Copilot review summaries
-(zero inline comments), classify outcomes, apply fixes, validate, then
-**automatically** commit, push, reply, resolve threads, and acknowledge
-summaries when `gh` is authenticated (default). Pass `dry-run: true` for
-review-only mode without shipping.
+CLI (`gh`) to fetch unresolved review threads, Copilot review summaries (zero
+inline comments), bot conversation comments on the PR timeline, and orphan
+inline review comments from REST, classify outcomes, apply fixes, validate,
+then **automatically** commit, push, reply, resolve threads, and acknowledge
+non-thread feedback when `gh` is authenticated (default). Pass `dry-run: true`
+for review-only mode without shipping.
+
+Phase 1 always runs all four fetches before triage — conversation and orphan
+inline items are not skipped when unresolved threads exist.
 
 ## Workflow
 
@@ -82,11 +87,22 @@ Invoke the **`github-pr-review-triage`** agent when you need to:
 
 - Address Copilot, Bugbot, or human inline review feedback on an open PR
 - Address Copilot overview or summary reviews with no inline comments
+- Address Bugbot or Cursor bot **conversation** comments (timeline, not in a
+  review thread)
 - Batch-triage unresolved review threads before CI fixes
 - Close review threads after fixes land on the branch
 
 When `gh` is authenticated, the agent commits, pushes, and resolves threads
 by default. No extra permission input is required.
+
+### Feedback kinds
+
+| Kind | Typical source |
+| --- | --- |
+| `thread` | Unresolved inline review threads (GraphQL) |
+| `review_summary` | Copilot review with body, zero inline comments |
+| `conversation_comment` | Bot PR timeline comment (`issues/.../comments`) |
+| `orphan_inline` | Inline REST comment not already on a `thread` row |
 
 ### Inputs
 
@@ -108,8 +124,8 @@ by default. No extra permission input is required.
 - `triage-table` — markdown table of items, outcomes, and rationale
 - `handoff-summary` — PR URL, commit SHA, resolved/acknowledged counts, notes
 
-Summary acknowledgments appear on the PR conversation timeline (not under the
-review card).
+Summary and conversation acknowledgments appear on the PR conversation timeline
+(not under the review card).
 
 ## Package contents
 
@@ -124,5 +140,5 @@ From the registry repository root (package authors / registry contributors):
 npm run package:validate -- --package maiconfz/github-pr-review-triage
 npm run package:build -- --package maiconfz/github-pr-review-triage
 npm run package:validate-artifacts -- \
-  --package maiconfz/github-pr-review-triage --version 1.2.1
+  --package maiconfz/github-pr-review-triage --version 1.3.0
 ```
