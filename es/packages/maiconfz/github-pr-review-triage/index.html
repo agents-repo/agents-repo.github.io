@@ -50,12 +50,12 @@
     <link rel="stylesheet" crossorigin href="/assets/index-BZfT2iP8.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script>    <title>github-pr-review-triage — Agents Repo</title>
-    <meta name="description" content="GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, and orphan inline comments via gh CLI — fetch, fix, commit, pus…" />
+    <meta name="description" content="GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, orphan inline comments, and failing PR checks via gh CLI — fetc…" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://agents-repo.org/es/packages/maiconfz/github-pr-review-triage/" />
     <meta property="og:url" content="https://agents-repo.org/es/packages/maiconfz/github-pr-review-triage/" />
     <meta property="og:title" content="github-pr-review-triage — Agents Repo" />
-    <meta property="og:description" content="GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, and… — npx agents-repo install maiconfz/github-pr-review-triage" />
+    <meta property="og:description" content="GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, orph… — npx agents-repo install maiconfz/github-pr-review-triage" />
     <meta property="og:image" content="https://agents-repo.org/og/packages/maiconfz/github-pr-review-triage.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -70,38 +70,40 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@AgentsRepo" />
     <meta name="twitter:title" content="github-pr-review-triage — Agents Repo" />
-    <meta name="twitter:description" content="GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, and… — npx agents-repo install maiconfz/github-pr-review-triage" />
+    <meta name="twitter:description" content="GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, orph… — npx agents-repo install maiconfz/github-pr-review-triage" />
     <meta name="twitter:image" content="https://agents-repo.org/og/packages/maiconfz/github-pr-review-triage.jpg" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"github-pr-review-triage — Agents Repo","description":"GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, and orphan inline comments via gh CLI — fetch, fix, commit, pus…","url":"https://agents-repo.org/es/packages/maiconfz/github-pr-review-triage/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/github-pr-review-triage"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"github-pr-review-triage — Agents Repo","description":"GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, orphan inline comments, and failing PR checks via gh CLI — fetc…","url":"https://agents-repo.org/es/packages/maiconfz/github-pr-review-triage/","codeRepository":"https://github.com/agents-repo/registry/tree/v2.x/packages/maiconfz/github-pr-review-triage"}</script>
   </head>
   <body>
     <noscript id="static-route-fallback">
   <main>
     <h1>github-pr-review-triage</h1>
-    <p>GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, and orphan inline comments via gh CLI — fetch, fix, commit, pus…</p>
+    <p>GitHub-specific agent: triages PR review threads, Copilot summaries, bot conversation comments, orphan inline comments, and failing PR checks via gh CLI — fetc…</p>
     <p>Markdown fallback: <a href="https://agents-repo.org/packages/maiconfz/github-pr-review-triage.md">/packages/maiconfz/github-pr-review-triage.md</a></p>
     <p>Interactive catalog page: <a href="https://agents-repo.org/es/packages/maiconfz/github-pr-review-triage/">/es/packages/maiconfz/github-pr-review-triage/</a></p>
     <h2>Agents</h2>
-<pre>- github-pr-review-triage: GitHub PR review triage via gh: fetch unresolved threads, Copilot summaries, bot conversation comments, and orphan inline comments; fix, commit, reply, and resolve or acknowledge. Use for Copilot or Bugbot PR feedback.</pre>
+<pre>- github-pr-review-triage: GitHub PR review and CI triage via gh: fetch unresolved threads, Copilot summaries, bot conversation comments, orphan inline comments, and failing PR checks; fix, commit, reply, and resolve or acknowledge. Use for Copilot, Bugbot, or CI failures on an open PR.</pre>
     <h2>README excerpt</h2>
 <pre># github-pr-review-triage
 
 GitHub-specific agent: triages PR review threads, Copilot summaries, bot
-conversation comments, and orphan inline comments via `gh` — fetch, fix,
-commit, push, reply, resolve or acknowledge.
+conversation comments, orphan inline comments, and failing PR checks via `gh` —
+fetch, fix, commit, push, reply, resolve or acknowledge.
 
 ## Objective
 
-Triages pull request review feedback on any GitHub repository. Uses the GitHub
-CLI (`gh`) to fetch unresolved review threads, Copilot review summaries (zero
-inline comments), bot conversation comments on the PR timeline, and orphan
-inline review comments from REST, classify outcomes, apply fixes, validate,
-then **automatically** commit, push, reply, resolve threads, and acknowledge
-non-thread feedback when `gh` is authenticated (default). Pass `dry-run: true`
-for review-only mode without shipping.
+Triages pull request review feedback and CI failures on any GitHub repository.
+Uses the GitHub CLI (`gh`) to fetch unresolved review threads, Copilot review
+summaries (zero inline comments), bot conversation comments on the PR timeline,
+orphan inline review comments from REST, and failing checks for the PR head SHA,
+classify outcomes, apply fixes, validate, then **automatically** commit, push,
+reply, resolve threads, and acknowledge non-thread feedback when `gh` is
+authenticated (default). Pass `dry-run: true` for review-only mode without
+shipping.
 
-Phase 1 always runs all four fetches before triage — conversation and orphan
-inline items are not skipped when unresolved threads exist.
+Phase 1 always runs all review fetches before triage — conversation and orphan
+inline items are not skipped when unresolved threads exist. When `include-ci` is
+true (default), PR checks and failed-run logs are fetched before triage.
 
 ## Workflow
 
@@ -141,11 +143,7 @@ Already configured (targets present in `agents.json`):
 npx agents-repo@latest install maiconfz/github-pr-review-triage
 ```
 
-- Choose `--targets` for your IDE: `github-copilot`, `cursor`, `claude-code`,
-  or `openai-codex` (pass one or more).
-- After install, commit `agents.json`, `agents-lock.json`, and the extracted
-  install paths when they change.
-- Ex</pre>
+- Choose `--targets` for your IDE: `github-copilot`, `cursor`, `cl</pre>
   </main>
 </noscript>
     <div id="root"></div>
