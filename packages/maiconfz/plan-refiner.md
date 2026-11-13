@@ -3,7 +3,7 @@
 Refine an existing feature or implementation plan against the current repository: find gaps and inconsistencies. Interactive ask-first or automatic assumption-first. Planning only; does not implement.
 
 - Package: `maiconfz/plan-refiner`
-- Version: `1.0.0`
+- Version: `1.0.1`
 - HTML page: https://agents-repo.org/packages/maiconfz/plan-refiner/
 - Markdown: https://agents-repo.org/packages/maiconfz/plan-refiner.md
 
@@ -36,7 +36,7 @@ assumptions. Bounded rediscovery (project rules, cited files, related
 modules and tests). Not a first-pass planner.
 
 If you have a GitHub issue number and no plan yet, use
-`maiconfz/github-interactive-issue-implementation-planner` instead. This
+`maiconfz/github-issue-implementation-planner` instead. This
 package does not call `gh` and does not invoke that package.
 
 ## Workflow
@@ -136,7 +136,7 @@ contributors):
 PKG=maiconfz/plan-refiner
 npm run package:validate -- --package "$PKG"
 npm run package:build -- --package "$PKG"
-npm run package:validate-artifacts -- --package "$PKG" --version 1.0.0
+npm run package:validate-artifacts -- --package "$PKG" --version 1.0.1
 ```
 
 Do not author `detail.json` or any files under `versions/`.

@@ -3,7 +3,7 @@
 Explore app feature ideas with ask-first intake, optional landscape research, options analysis, and a structured feature brief. Chat-web for early brainstorming. Planning only.
 
 - Package: `maiconfz/feature-exploration-planner`
-- Version: `1.0.0`
+- Version: `1.0.1`
 - HTML page: https://agents-repo.org/packages/maiconfz/feature-exploration-planner/
 - Markdown: https://agents-repo.org/packages/maiconfz/feature-exploration-planner.md
 
@@ -37,7 +37,7 @@ or unclear).
 Turn a fuzzy app feature idea into a structured **feature-brief** you can
 paste into a GitHub issue or feed downstream planning. Sits **upstream** of:
 
-- `maiconfz/github-interactive-issue-implementation-planner` (issue exists)
+- `maiconfz/github-issue-implementation-planner` (issue exists)
 - `maiconfz/plan-refiner` (implementation plan exists)
 
 Primary output is **text in the conversation** — no markdown file required.
@@ -128,7 +128,7 @@ Two entry paths:
 This package stops at the flow outputs above. Suggested next steps:
 
 1. Copy `feature-brief` into a **new GitHub issue**
-2. Run `maiconfz/github-interactive-issue-implementation-planner` with that
+2. Run `maiconfz/github-issue-implementation-planner` with that
    issue number
 3. Or draft an implementation plan and run `maiconfz/plan-refiner`
 
@@ -186,7 +186,7 @@ From the registry repository root (package authors / registry contributors):
 PKG=maiconfz/feature-exploration-planner
 npm run package:validate -- --package "$PKG"
 npm run package:build -- --package "$PKG"
-npm run package:validate-artifacts -- --package "$PKG" --version 1.0.0
+npm run package:validate-artifacts -- --package "$PKG" --version 1.0.1
 ```
 
 Do not author `detail.json` or any files under `versions/`.

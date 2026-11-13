@@ -3,7 +3,7 @@
 Interactive GitHub issue planning: load issue via gh, draft and refine an implementation plan with ask-first clarifications.
 
 - Package: `maiconfz/github-interactive-issue-implementation-planner`
-- Version: `1.1.1`
+- Version: `1.2.0`
 - HTML page: https://agents-repo.org/packages/maiconfz/github-interactive-issue-implementation-planner/
 - Markdown: https://agents-repo.org/packages/maiconfz/github-interactive-issue-implementation-planner.md
 
@@ -20,6 +20,10 @@ Interactive GitHub issue planning: load issue via gh, draft and refine an implem
 ## README
 
 # github-interactive-issue-implementation-planner
+
+> **Deprecated.** Use
+> [`maiconfz/github-issue-implementation-planner`](https://github.com/agents-repo/registry/tree/main/packages/maiconfz/github-issue-implementation-planner)
+> for interactive or automatic multi-issue planning.
 
 Interactive GitHub issue planning: load issue via `gh`, draft and refine an
 implementation plan with ask-first clarifications.
@@ -125,5 +129,5 @@ From the registry repository root (package authors / registry contributors):
 PKG=maiconfz/github-interactive-issue-implementation-planner
 npm run package:validate -- --package "$PKG"
 npm run package:build -- --package "$PKG"
-npm run package:validate-artifacts -- --package "$PKG" --version 1.1.1
+npm run package:validate-artifacts -- --package "$PKG" --version 1.2.0
 ```
